@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SCoelloS5.Views.VPersona"
+             Title="VPersona">
+    <VerticalStackLayout
+        Spacing="25">
+        <Image
+    Source="image23.png"
+    SemanticProperties.Description="Cute dot net bot waving hi to you!"
+    HeightRequest="100"
+    HorizontalOptions="Center" />
+        <Entry x:Name="TxtName"
+               Placeholder="Ingrese un nombre"/>
+        <Entry x:Name="TxtId"
+       Placeholder="Ingrese el Id que desea eliminar o actualizar"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BtnInsertar"
+                    Text="Insertar"
+                    Clicked="BtnInsertar_Clicked"
+                    Grid.Row="0"
+                    Grid.Column="0"
+            />
+            <Label x:Name="lblStatus"
+       Grid.Row="1"
+       Grid.Column="0"
+       TextColor="Blue"/>
+            <Button x:Name="BtnEliminar"
+        Text="Eliminar"
+        Clicked="BtnEliminar_Clicked"
+        Grid.Row="2"
+        Grid.Column="0"
+            />
+            <Button x:Name="BtnActualizar"
+Text="Actualizar"
+Clicked="BtnActualizar_Clicked"
+Grid.Row="3"
+Grid.Column="0"
+    />
+            <Button x:Name="BtnObtener"
+                    Text="Listar personas"
+                    Clicked="BtnObtener_Clicked"
+                    Grid.Row="4"
+                    Grid.Column="0"/>
+            <CollectionView x:Name="ListaPersona"
+                            Grid.Row="5"
+                            Grid.Column="0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Id}" Grid.Column="0"/>
+                            <Label Text="{Binding Name}" Grid.Column="1"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                
+
+            </CollectionView>
+
+
+        </Grid>
+
+
+    </VerticalStackLayout>
+</ContentPage>
